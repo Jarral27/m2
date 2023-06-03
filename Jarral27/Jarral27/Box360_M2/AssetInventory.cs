@@ -32,24 +32,13 @@ namespace Box360_M2
 
         }
 
-        private void assetDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
         private void AssetIdBtn_Click(object sender, EventArgs e)
         {
-           
             Random random = new Random();
             string id = "";
 
@@ -76,8 +65,6 @@ namespace Box360_M2
             }
 
             TxtAssetID.Text = "AI" + id;
-
-           
         }
         private string getIntID(string id)
         {
@@ -97,18 +84,16 @@ namespace Box360_M2
 
             assetTableAdapter.Insert(AssetId, AssetName, Condition, CostPrice, Type, Quantity);
             this.assetTableAdapter.Fill(this.dsBox360.Asset);
-
-
         }
 
-        private void AddAssetgb_Enter(object sender, EventArgs e)
+        private void TxtAssName_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void TxtType_TextChanged(object sender, EventArgs e)
+        private void DeleteAsset_Click(object sender, EventArgs e)
         {
-
+            dsBox360.Asset.Rows[Assetdb.CurrentRow.Index].Delete();
         }
 
         private void UpdateAsset_Click(object sender, EventArgs e)
@@ -116,12 +101,6 @@ namespace Box360_M2
             assetTableAdapter.UpdateConditionMethod(updateconditioncb.Text, Assetdb.CurrentRow.Cells[0].Value.ToString(), Assetdb.CurrentRow.Cells[0].Value.ToString());
             assetTableAdapter.UpdateQuantityMethod(int.Parse(TxtUpdateQuantity.Text), Assetdb.CurrentRow.Cells[0].Value.ToString(), Assetdb.CurrentRow.Cells[0].Value.ToString());
             this.assetTableAdapter.Fill(this.dsBox360.Asset);
-
-        }
-
-        private void DeleteAsset_Click(object sender, EventArgs e)
-        {
-            dsBox360.Asset.Rows[Assetdb.CurrentRow.Index].Delete();
         }
     }
 }
