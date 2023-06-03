@@ -1,5 +1,4 @@
-﻿
-namespace Box360_M2
+﻿namespace Box360_M2
 {
     partial class AssetInventory
     {
@@ -31,59 +30,89 @@ namespace Box360_M2
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AssetInventory));
+            this.dsBox360 = new Box360_M2.dsBox360();
+            this.assetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assetTableAdapter = new Box360_M2.dsBox360TableAdapters.AssetTableAdapter();
+            this.tableAdapterManager = new Box360_M2.dsBox360TableAdapters.TableAdapterManager();
             this.assetBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.assetBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.Assetdb = new System.Windows.Forms.DataGridView();
-            this.TxtAssetID = new System.Windows.Forms.TextBox();
-            this.AssetIdBtn = new System.Windows.Forms.Button();
-            this.txtAssName = new System.Windows.Forms.TextBox();
-            this.AssNameLabel = new System.Windows.Forms.Label();
-            this.TxtCondition = new System.Windows.Forms.TextBox();
-            this.ConditionLabel = new System.Windows.Forms.Label();
-            this.Quantity = new System.Windows.Forms.Label();
-            this.Type = new System.Windows.Forms.Label();
-            this.CostPrice = new System.Windows.Forms.Label();
-            this.TxtQuantity = new System.Windows.Forms.TextBox();
-            this.TxtType = new System.Windows.Forms.TextBox();
-            this.TxtCostPrice = new System.Windows.Forms.TextBox();
-            this.AddAsset = new System.Windows.Forms.Button();
-            this.AddAssetgb = new System.Windows.Forms.GroupBox();
-            this.UpdateAssetgb = new System.Windows.Forms.GroupBox();
-            this.TxtUpdateQuantity = new System.Windows.Forms.TextBox();
-            this.UpdateQuantity = new System.Windows.Forms.Label();
-            this.UpdateCondition = new System.Windows.Forms.Label();
-            this.updateconditioncb = new System.Windows.Forms.ComboBox();
-            this.UpdateAsset = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsBox360 = new Box360_M2.dsBox360();
-            this.assetTableAdapter = new Box360_M2.dsBox360TableAdapters.AssetTableAdapter();
-            this.tableAdapterManager = new Box360_M2.dsBox360TableAdapters.TableAdapterManager();
+            this.AddAssetgroupBox = new System.Windows.Forms.GroupBox();
+            this.AssetIdBtn = new System.Windows.Forms.Button();
+            this.TxtCostPrice = new System.Windows.Forms.TextBox();
+            this.TxtType = new System.Windows.Forms.TextBox();
+            this.TxtQuantity = new System.Windows.Forms.TextBox();
+            this.Quantity = new System.Windows.Forms.Label();
+            this.Type = new System.Windows.Forms.Label();
+            this.CostPrice = new System.Windows.Forms.Label();
+            this.TxtAssetID = new System.Windows.Forms.TextBox();
+            this.txtAssName = new System.Windows.Forms.TextBox();
+            this.TxtCondition = new System.Windows.Forms.TextBox();
+            this.AssNameLabel = new System.Windows.Forms.Label();
+            this.ConditionLabel = new System.Windows.Forms.Label();
+            this.AddAsset = new System.Windows.Forms.Button();
             this.DeleteAsset = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtUpdateQuantity = new System.Windows.Forms.TextBox();
+            this.UpdateQuantity = new System.Windows.Forms.Label();
+            this.UpdateCondition = new System.Windows.Forms.Label();
+            this.updateconditioncb = new System.Windows.Forms.ComboBox();
+            this.UpdateAsset = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBox360)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetBindingNavigator)).BeginInit();
             this.assetBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Assetdb)).BeginInit();
-            this.AddAssetgb.SuspendLayout();
-            this.UpdateAssetgb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBox360)).BeginInit();
+            this.AddAssetgroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dsBox360
+            // 
+            this.dsBox360.DataSetName = "dsBox360";
+            this.dsBox360.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // assetBindingSource
+            // 
+            this.assetBindingSource.DataMember = "Asset";
+            this.assetBindingSource.DataSource = this.dsBox360;
+            // 
+            // assetTableAdapter
+            // 
+            this.assetTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AssetTableAdapter = this.assetTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BookingTableAdapter = null;
+            this.tableAdapterManager.ClassTableAdapter = null;
+            this.tableAdapterManager.ClientTableAdapter = null;
+            this.tableAdapterManager.CoachTableAdapter = null;
+            this.tableAdapterManager.InventoryTableAdapter = null;
+            this.tableAdapterManager.ManagerTableAdapter = null;
+            this.tableAdapterManager.SaleItemTableAdapter = null;
+            this.tableAdapterManager.SaleTableAdapter = null;
+            this.tableAdapterManager.SupplierOrderTableAdapter = null;
+            this.tableAdapterManager.SupplierTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Box360_M2.dsBox360TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // assetBindingNavigator
             // 
@@ -112,34 +141,9 @@ namespace Box360_M2
             this.assetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.assetBindingNavigator.Name = "assetBindingNavigator";
             this.assetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.assetBindingNavigator.Size = new System.Drawing.Size(1332, 27);
+            this.assetBindingNavigator.Size = new System.Drawing.Size(1292, 27);
             this.assetBindingNavigator.TabIndex = 0;
             this.assetBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -174,9 +178,16 @@ namespace Box360_M2
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -199,8 +210,26 @@ namespace Box360_M2
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // assetBindingNavigatorSaveItem
             // 
@@ -223,214 +252,12 @@ namespace Box360_M2
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.Assetdb.DataSource = this.assetBindingSource;
-            this.Assetdb.Location = new System.Drawing.Point(18, 52);
+            this.Assetdb.Location = new System.Drawing.Point(12, 41);
             this.Assetdb.Name = "Assetdb";
             this.Assetdb.RowHeadersWidth = 51;
             this.Assetdb.RowTemplate.Height = 24;
-            this.Assetdb.Size = new System.Drawing.Size(802, 220);
+            this.Assetdb.Size = new System.Drawing.Size(809, 220);
             this.Assetdb.TabIndex = 1;
-            this.Assetdb.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetDataGridView_CellContentClick);
-            // 
-            // TxtAssetID
-            // 
-            this.TxtAssetID.Location = new System.Drawing.Point(149, 46);
-            this.TxtAssetID.Name = "TxtAssetID";
-            this.TxtAssetID.ReadOnly = true;
-            this.TxtAssetID.Size = new System.Drawing.Size(111, 22);
-            this.TxtAssetID.TabIndex = 2;
-            this.TxtAssetID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // AssetIdBtn
-            // 
-            this.AssetIdBtn.Location = new System.Drawing.Point(6, 30);
-            this.AssetIdBtn.Name = "AssetIdBtn";
-            this.AssetIdBtn.Size = new System.Drawing.Size(137, 38);
-            this.AssetIdBtn.TabIndex = 3;
-            this.AssetIdBtn.Text = "Generate Asset ID";
-            this.AssetIdBtn.UseVisualStyleBackColor = true;
-            this.AssetIdBtn.Click += new System.EventHandler(this.AssetIdBtn_Click);
-            // 
-            // txtAssName
-            // 
-            this.txtAssName.Location = new System.Drawing.Point(149, 93);
-            this.txtAssName.Name = "txtAssName";
-            this.txtAssName.Size = new System.Drawing.Size(111, 22);
-            this.txtAssName.TabIndex = 4;
-            // 
-            // AssNameLabel
-            // 
-            this.AssNameLabel.AutoSize = true;
-            this.AssNameLabel.Location = new System.Drawing.Point(59, 96);
-            this.AssNameLabel.Name = "AssNameLabel";
-            this.AssNameLabel.Size = new System.Drawing.Size(84, 17);
-            this.AssNameLabel.TabIndex = 5;
-            this.AssNameLabel.Text = "Asset Name";
-            // 
-            // TxtCondition
-            // 
-            this.TxtCondition.Location = new System.Drawing.Point(149, 136);
-            this.TxtCondition.Name = "TxtCondition";
-            this.TxtCondition.Size = new System.Drawing.Size(111, 22);
-            this.TxtCondition.TabIndex = 6;
-            // 
-            // ConditionLabel
-            // 
-            this.ConditionLabel.AutoSize = true;
-            this.ConditionLabel.Location = new System.Drawing.Point(76, 141);
-            this.ConditionLabel.Name = "ConditionLabel";
-            this.ConditionLabel.Size = new System.Drawing.Size(67, 17);
-            this.ConditionLabel.TabIndex = 7;
-            this.ConditionLabel.Text = "Condition";
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSize = true;
-            this.Quantity.Location = new System.Drawing.Point(344, 51);
-            this.Quantity.Name = "Quantity";
-            this.Quantity.Size = new System.Drawing.Size(61, 17);
-            this.Quantity.TabIndex = 8;
-            this.Quantity.Text = "Quantity";
-            this.Quantity.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // Type
-            // 
-            this.Type.AutoSize = true;
-            this.Type.Location = new System.Drawing.Point(365, 96);
-            this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(40, 17);
-            this.Type.TabIndex = 9;
-            this.Type.Text = "Type";
-            // 
-            // CostPrice
-            // 
-            this.CostPrice.AutoSize = true;
-            this.CostPrice.Location = new System.Drawing.Point(333, 141);
-            this.CostPrice.Name = "CostPrice";
-            this.CostPrice.Size = new System.Drawing.Size(72, 17);
-            this.CostPrice.TabIndex = 10;
-            this.CostPrice.Text = "Cost Price";
-            // 
-            // TxtQuantity
-            // 
-            this.TxtQuantity.Location = new System.Drawing.Point(411, 51);
-            this.TxtQuantity.Name = "TxtQuantity";
-            this.TxtQuantity.Size = new System.Drawing.Size(111, 22);
-            this.TxtQuantity.TabIndex = 11;
-            // 
-            // TxtType
-            // 
-            this.TxtType.Location = new System.Drawing.Point(411, 93);
-            this.TxtType.Name = "TxtType";
-            this.TxtType.Size = new System.Drawing.Size(111, 22);
-            this.TxtType.TabIndex = 12;
-            this.TxtType.TextChanged += new System.EventHandler(this.TxtType_TextChanged);
-            // 
-            // TxtCostPrice
-            // 
-            this.TxtCostPrice.Location = new System.Drawing.Point(411, 136);
-            this.TxtCostPrice.Name = "TxtCostPrice";
-            this.TxtCostPrice.Size = new System.Drawing.Size(111, 22);
-            this.TxtCostPrice.TabIndex = 13;
-            // 
-            // AddAsset
-            // 
-            this.AddAsset.Location = new System.Drawing.Point(571, 91);
-            this.AddAsset.Name = "AddAsset";
-            this.AddAsset.Size = new System.Drawing.Size(120, 67);
-            this.AddAsset.TabIndex = 14;
-            this.AddAsset.Text = "Add Asset";
-            this.AddAsset.UseVisualStyleBackColor = true;
-            this.AddAsset.Click += new System.EventHandler(this.AddAsset_Click);
-            // 
-            // AddAssetgb
-            // 
-            this.AddAssetgb.Controls.Add(this.TxtCostPrice);
-            this.AddAssetgb.Controls.Add(this.AddAsset);
-            this.AddAssetgb.Controls.Add(this.TxtType);
-            this.AddAssetgb.Controls.Add(this.TxtAssetID);
-            this.AddAssetgb.Controls.Add(this.TxtQuantity);
-            this.AddAssetgb.Controls.Add(this.Quantity);
-            this.AddAssetgb.Controls.Add(this.Type);
-            this.AddAssetgb.Controls.Add(this.CostPrice);
-            this.AddAssetgb.Controls.Add(this.ConditionLabel);
-            this.AddAssetgb.Controls.Add(this.AssetIdBtn);
-            this.AddAssetgb.Controls.Add(this.TxtCondition);
-            this.AddAssetgb.Controls.Add(this.txtAssName);
-            this.AddAssetgb.Controls.Add(this.AssNameLabel);
-            this.AddAssetgb.Location = new System.Drawing.Point(12, 332);
-            this.AddAssetgb.Name = "AddAssetgb";
-            this.AddAssetgb.Size = new System.Drawing.Size(723, 193);
-            this.AddAssetgb.TabIndex = 15;
-            this.AddAssetgb.TabStop = false;
-            this.AddAssetgb.Text = "Add an Asset";
-            this.AddAssetgb.Enter += new System.EventHandler(this.AddAssetgb_Enter);
-            // 
-            // UpdateAssetgb
-            // 
-            this.UpdateAssetgb.Controls.Add(this.UpdateAsset);
-            this.UpdateAssetgb.Controls.Add(this.updateconditioncb);
-            this.UpdateAssetgb.Controls.Add(this.UpdateCondition);
-            this.UpdateAssetgb.Controls.Add(this.UpdateQuantity);
-            this.UpdateAssetgb.Controls.Add(this.TxtUpdateQuantity);
-            this.UpdateAssetgb.Location = new System.Drawing.Point(783, 332);
-            this.UpdateAssetgb.Name = "UpdateAssetgb";
-            this.UpdateAssetgb.Size = new System.Drawing.Size(449, 193);
-            this.UpdateAssetgb.TabIndex = 16;
-            this.UpdateAssetgb.TabStop = false;
-            this.UpdateAssetgb.Text = "Update Asset";
-            // 
-            // TxtUpdateQuantity
-            // 
-            this.TxtUpdateQuantity.Location = new System.Drawing.Point(148, 51);
-            this.TxtUpdateQuantity.Name = "TxtUpdateQuantity";
-            this.TxtUpdateQuantity.Size = new System.Drawing.Size(121, 22);
-            this.TxtUpdateQuantity.TabIndex = 0;
-            // 
-            // UpdateQuantity
-            // 
-            this.UpdateQuantity.AutoSize = true;
-            this.UpdateQuantity.Location = new System.Drawing.Point(31, 54);
-            this.UpdateQuantity.Name = "UpdateQuantity";
-            this.UpdateQuantity.Size = new System.Drawing.Size(111, 17);
-            this.UpdateQuantity.TabIndex = 1;
-            this.UpdateQuantity.Text = "Update Quantity";
-            // 
-            // UpdateCondition
-            // 
-            this.UpdateCondition.AutoSize = true;
-            this.UpdateCondition.Location = new System.Drawing.Point(25, 98);
-            this.UpdateCondition.Name = "UpdateCondition";
-            this.UpdateCondition.Size = new System.Drawing.Size(117, 17);
-            this.UpdateCondition.TabIndex = 2;
-            this.UpdateCondition.Text = "Update Condition";
-            // 
-            // updateconditioncb
-            // 
-            this.updateconditioncb.AutoCompleteCustomSource.AddRange(new string[] {
-            "Excellent",
-            "Good",
-            "Bad",
-            "Damaged"});
-            this.updateconditioncb.FormattingEnabled = true;
-            this.updateconditioncb.Items.AddRange(new object[] {
-            "Excellent",
-            "Good",
-            "Bad",
-            "Damaged"});
-            this.updateconditioncb.Location = new System.Drawing.Point(148, 93);
-            this.updateconditioncb.Name = "updateconditioncb";
-            this.updateconditioncb.Size = new System.Drawing.Size(121, 24);
-            this.updateconditioncb.TabIndex = 3;
-            // 
-            // UpdateAsset
-            // 
-            this.UpdateAsset.Location = new System.Drawing.Point(297, 91);
-            this.UpdateAsset.Name = "UpdateAsset";
-            this.UpdateAsset.Size = new System.Drawing.Size(120, 67);
-            this.UpdateAsset.TabIndex = 15;
-            this.UpdateAsset.Text = "Update Asset";
-            this.UpdateAsset.UseVisualStyleBackColor = true;
-            this.UpdateAsset.Click += new System.EventHandler(this.UpdateAsset_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -480,68 +307,240 @@ namespace Box360_M2
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 125;
             // 
-            // assetBindingSource
+            // AddAssetgroupBox
             // 
-            this.assetBindingSource.DataMember = "Asset";
-            this.assetBindingSource.DataSource = this.dsBox360;
+            this.AddAssetgroupBox.Controls.Add(this.AddAsset);
+            this.AddAssetgroupBox.Controls.Add(this.ConditionLabel);
+            this.AddAssetgroupBox.Controls.Add(this.AssNameLabel);
+            this.AddAssetgroupBox.Controls.Add(this.TxtCondition);
+            this.AddAssetgroupBox.Controls.Add(this.txtAssName);
+            this.AddAssetgroupBox.Controls.Add(this.TxtAssetID);
+            this.AddAssetgroupBox.Controls.Add(this.CostPrice);
+            this.AddAssetgroupBox.Controls.Add(this.Type);
+            this.AddAssetgroupBox.Controls.Add(this.Quantity);
+            this.AddAssetgroupBox.Controls.Add(this.TxtQuantity);
+            this.AddAssetgroupBox.Controls.Add(this.TxtType);
+            this.AddAssetgroupBox.Controls.Add(this.TxtCostPrice);
+            this.AddAssetgroupBox.Controls.Add(this.AssetIdBtn);
+            this.AddAssetgroupBox.Location = new System.Drawing.Point(12, 286);
+            this.AddAssetgroupBox.Name = "AddAssetgroupBox";
+            this.AddAssetgroupBox.Size = new System.Drawing.Size(676, 187);
+            this.AddAssetgroupBox.TabIndex = 2;
+            this.AddAssetgroupBox.TabStop = false;
+            this.AddAssetgroupBox.Text = "Add an Asset";
+            this.AddAssetgroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // dsBox360
+            // AssetIdBtn
             // 
-            this.dsBox360.DataSetName = "dsBox360";
-            this.dsBox360.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.AssetIdBtn.Location = new System.Drawing.Point(15, 38);
+            this.AssetIdBtn.Name = "AssetIdBtn";
+            this.AssetIdBtn.Size = new System.Drawing.Size(151, 31);
+            this.AssetIdBtn.TabIndex = 0;
+            this.AssetIdBtn.Text = "Generate Asset ID";
+            this.AssetIdBtn.UseVisualStyleBackColor = true;
+            this.AssetIdBtn.Click += new System.EventHandler(this.AssetIdBtn_Click);
             // 
-            // assetTableAdapter
+            // TxtCostPrice
             // 
-            this.assetTableAdapter.ClearBeforeFill = true;
+            this.TxtCostPrice.Location = new System.Drawing.Point(436, 145);
+            this.TxtCostPrice.Name = "TxtCostPrice";
+            this.TxtCostPrice.Size = new System.Drawing.Size(111, 22);
+            this.TxtCostPrice.TabIndex = 14;
             // 
-            // tableAdapterManager
+            // TxtType
             // 
-            this.tableAdapterManager.AssetTableAdapter = this.assetTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BookingTableAdapter = null;
-            this.tableAdapterManager.ClassTableAdapter = null;
-            this.tableAdapterManager.ClientTableAdapter = null;
-            this.tableAdapterManager.CoachTableAdapter = null;
-            this.tableAdapterManager.InventoryTableAdapter = null;
-            this.tableAdapterManager.ManagerTableAdapter = null;
-            this.tableAdapterManager.SaleItemTableAdapter = null;
-            this.tableAdapterManager.SaleTableAdapter = null;
-            this.tableAdapterManager.SupplierOrderTableAdapter = null;
-            this.tableAdapterManager.SupplierTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Box360_M2.dsBox360TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.TxtType.Location = new System.Drawing.Point(436, 95);
+            this.TxtType.Name = "TxtType";
+            this.TxtType.Size = new System.Drawing.Size(111, 22);
+            this.TxtType.TabIndex = 15;
+            // 
+            // TxtQuantity
+            // 
+            this.TxtQuantity.Location = new System.Drawing.Point(436, 49);
+            this.TxtQuantity.Name = "TxtQuantity";
+            this.TxtQuantity.Size = new System.Drawing.Size(111, 22);
+            this.TxtQuantity.TabIndex = 16;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSize = true;
+            this.Quantity.Location = new System.Drawing.Point(369, 52);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(61, 17);
+            this.Quantity.TabIndex = 17;
+            this.Quantity.Text = "Quantity";
+            // 
+            // Type
+            // 
+            this.Type.AutoSize = true;
+            this.Type.Location = new System.Drawing.Point(390, 95);
+            this.Type.Name = "Type";
+            this.Type.Size = new System.Drawing.Size(40, 17);
+            this.Type.TabIndex = 18;
+            this.Type.Text = "Type";
+            // 
+            // CostPrice
+            // 
+            this.CostPrice.AutoSize = true;
+            this.CostPrice.Location = new System.Drawing.Point(358, 148);
+            this.CostPrice.Name = "CostPrice";
+            this.CostPrice.Size = new System.Drawing.Size(72, 17);
+            this.CostPrice.TabIndex = 19;
+            this.CostPrice.Text = "Cost Price";
+            // 
+            // TxtAssetID
+            // 
+            this.TxtAssetID.Location = new System.Drawing.Point(172, 47);
+            this.TxtAssetID.Name = "TxtAssetID";
+            this.TxtAssetID.ReadOnly = true;
+            this.TxtAssetID.Size = new System.Drawing.Size(111, 22);
+            this.TxtAssetID.TabIndex = 20;
+            // 
+            // txtAssName
+            // 
+            this.txtAssName.Location = new System.Drawing.Point(172, 95);
+            this.txtAssName.Name = "txtAssName";
+            this.txtAssName.ReadOnly = true;
+            this.txtAssName.Size = new System.Drawing.Size(111, 22);
+            this.txtAssName.TabIndex = 21;
+            this.txtAssName.TextChanged += new System.EventHandler(this.TxtAssName_TextChanged);
+            // 
+            // TxtCondition
+            // 
+            this.TxtCondition.Location = new System.Drawing.Point(172, 143);
+            this.TxtCondition.Name = "TxtCondition";
+            this.TxtCondition.ReadOnly = true;
+            this.TxtCondition.Size = new System.Drawing.Size(111, 22);
+            this.TxtCondition.TabIndex = 22;
+            // 
+            // AssNameLabel
+            // 
+            this.AssNameLabel.AutoSize = true;
+            this.AssNameLabel.Location = new System.Drawing.Point(82, 100);
+            this.AssNameLabel.Name = "AssNameLabel";
+            this.AssNameLabel.Size = new System.Drawing.Size(84, 17);
+            this.AssNameLabel.TabIndex = 23;
+            this.AssNameLabel.Text = "Asset Name";
+            // 
+            // ConditionLabel
+            // 
+            this.ConditionLabel.AutoSize = true;
+            this.ConditionLabel.Location = new System.Drawing.Point(99, 148);
+            this.ConditionLabel.Name = "ConditionLabel";
+            this.ConditionLabel.Size = new System.Drawing.Size(67, 17);
+            this.ConditionLabel.TabIndex = 24;
+            this.ConditionLabel.Text = "Condition";
+            // 
+            // AddAsset
+            // 
+            this.AddAsset.Location = new System.Drawing.Point(570, 114);
+            this.AddAsset.Name = "AddAsset";
+            this.AddAsset.Size = new System.Drawing.Size(100, 53);
+            this.AddAsset.TabIndex = 25;
+            this.AddAsset.Text = "Add Asset";
+            this.AddAsset.UseVisualStyleBackColor = true;
+            this.AddAsset.Click += new System.EventHandler(this.AddAsset_Click);
             // 
             // DeleteAsset
             // 
-            this.DeleteAsset.Location = new System.Drawing.Point(1001, 149);
+            this.DeleteAsset.Location = new System.Drawing.Point(885, 120);
             this.DeleteAsset.Name = "DeleteAsset";
             this.DeleteAsset.Size = new System.Drawing.Size(144, 51);
-            this.DeleteAsset.TabIndex = 17;
+            this.DeleteAsset.TabIndex = 18;
             this.DeleteAsset.Text = "Delete Asset";
             this.DeleteAsset.UseVisualStyleBackColor = true;
             this.DeleteAsset.Click += new System.EventHandler(this.DeleteAsset_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.UpdateAsset);
+            this.groupBox1.Controls.Add(this.updateconditioncb);
+            this.groupBox1.Controls.Add(this.UpdateCondition);
+            this.groupBox1.Controls.Add(this.UpdateQuantity);
+            this.groupBox1.Controls.Add(this.TxtUpdateQuantity);
+            this.groupBox1.Location = new System.Drawing.Point(784, 286);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(416, 187);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Update an Asset";
+            // 
+            // TxtUpdateQuantity
+            // 
+            this.TxtUpdateQuantity.Location = new System.Drawing.Point(164, 54);
+            this.TxtUpdateQuantity.Name = "TxtUpdateQuantity";
+            this.TxtUpdateQuantity.Size = new System.Drawing.Size(121, 22);
+            this.TxtUpdateQuantity.TabIndex = 1;
+            // 
+            // UpdateQuantity
+            // 
+            this.UpdateQuantity.AutoSize = true;
+            this.UpdateQuantity.Location = new System.Drawing.Point(27, 54);
+            this.UpdateQuantity.Name = "UpdateQuantity";
+            this.UpdateQuantity.Size = new System.Drawing.Size(111, 17);
+            this.UpdateQuantity.TabIndex = 2;
+            this.UpdateQuantity.Text = "Update Quantity";
+            // 
+            // UpdateCondition
+            // 
+            this.UpdateCondition.AutoSize = true;
+            this.UpdateCondition.Location = new System.Drawing.Point(27, 100);
+            this.UpdateCondition.Name = "UpdateCondition";
+            this.UpdateCondition.Size = new System.Drawing.Size(117, 17);
+            this.UpdateCondition.TabIndex = 3;
+            this.UpdateCondition.Text = "Update Condition";
+            // 
+            // updateconditioncb
+            // 
+            this.updateconditioncb.AutoCompleteCustomSource.AddRange(new string[] {
+            "Excellent",
+            "Good",
+            "Bad",
+            "Damaged"});
+            this.updateconditioncb.FormattingEnabled = true;
+            this.updateconditioncb.Items.AddRange(new object[] {
+            "Excellent",
+            "Good",
+            "Bad",
+            "Damaged"});
+            this.updateconditioncb.Location = new System.Drawing.Point(164, 93);
+            this.updateconditioncb.Name = "updateconditioncb";
+            this.updateconditioncb.Size = new System.Drawing.Size(121, 24);
+            this.updateconditioncb.TabIndex = 4;
+            // 
+            // UpdateAsset
+            // 
+            this.UpdateAsset.Location = new System.Drawing.Point(314, 64);
+            this.UpdateAsset.Name = "UpdateAsset";
+            this.UpdateAsset.Size = new System.Drawing.Size(96, 53);
+            this.UpdateAsset.TabIndex = 16;
+            this.UpdateAsset.Text = "Update Asset";
+            this.UpdateAsset.UseVisualStyleBackColor = true;
+            this.UpdateAsset.Click += new System.EventHandler(this.UpdateAsset_Click);
             // 
             // AssetInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 590);
+            this.ClientSize = new System.Drawing.Size(1292, 485);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DeleteAsset);
-            this.Controls.Add(this.UpdateAssetgb);
+            this.Controls.Add(this.AddAssetgroupBox);
             this.Controls.Add(this.Assetdb);
             this.Controls.Add(this.assetBindingNavigator);
-            this.Controls.Add(this.AddAssetgb);
             this.Name = "AssetInventory";
+            this.Text = "AssetInventory";
             this.Load += new System.EventHandler(this.AssetInventory_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dsBox360)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetBindingNavigator)).EndInit();
             this.assetBindingNavigator.ResumeLayout(false);
             this.assetBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Assetdb)).EndInit();
-            this.AddAssetgb.ResumeLayout(false);
-            this.AddAssetgb.PerformLayout();
-            this.UpdateAssetgb.ResumeLayout(false);
-            this.UpdateAssetgb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBox360)).EndInit();
+            this.AddAssetgroupBox.ResumeLayout(false);
+            this.AddAssetgroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,26 +572,26 @@ namespace Box360_M2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.TextBox TxtAssetID;
-        private System.Windows.Forms.Button AssetIdBtn;
-        private System.Windows.Forms.TextBox txtAssName;
+        private System.Windows.Forms.GroupBox AddAssetgroupBox;
+        private System.Windows.Forms.Button AddAsset;
+        private System.Windows.Forms.Label ConditionLabel;
         private System.Windows.Forms.Label AssNameLabel;
         private System.Windows.Forms.TextBox TxtCondition;
-        private System.Windows.Forms.Label ConditionLabel;
-        private System.Windows.Forms.Label Quantity;
-        private System.Windows.Forms.Label Type;
+        private System.Windows.Forms.TextBox txtAssName;
+        private System.Windows.Forms.TextBox TxtAssetID;
         private System.Windows.Forms.Label CostPrice;
+        private System.Windows.Forms.Label Type;
+        private System.Windows.Forms.Label Quantity;
         private System.Windows.Forms.TextBox TxtQuantity;
         private System.Windows.Forms.TextBox TxtType;
         private System.Windows.Forms.TextBox TxtCostPrice;
-        private System.Windows.Forms.Button AddAsset;
-        private System.Windows.Forms.GroupBox AddAssetgb;
-        private System.Windows.Forms.GroupBox UpdateAssetgb;
+        private System.Windows.Forms.Button AssetIdBtn;
+        private System.Windows.Forms.Button DeleteAsset;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button UpdateAsset;
         private System.Windows.Forms.ComboBox updateconditioncb;
         private System.Windows.Forms.Label UpdateCondition;
         private System.Windows.Forms.Label UpdateQuantity;
         private System.Windows.Forms.TextBox TxtUpdateQuantity;
-        private System.Windows.Forms.Button UpdateAsset;
-        private System.Windows.Forms.Button DeleteAsset;
     }
 }
