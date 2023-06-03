@@ -6547,12 +6547,30 @@ SELECT BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue FROM Booki
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue FROM dbo.Bo" +
                 "oking";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue\r\nFRO" +
+                "M            Booking\r\nWHERE        (BookingDate LIKE @bookingDate)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookingDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BookingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO [dbo].[Booking] ([BookingID], [ClientID], [ClassID], [BookingDate], [Status], [Type], [Venue]) VALUES (@BookingID, @ClientID, @ClassID, @BookingDate, @Status, @Type, @Venue);
+SELECT BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue FROM Booking WHERE (BookingID = @BookingID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookingID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "BookingID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookingDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "BookingDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Venue", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Venue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6574,6 +6592,42 @@ SELECT BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue FROM Booki
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsBox360.BookingDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsBox360.BookingDataTable dataTable = new dsBox360.BookingDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDate(dsBox360.BookingDataTable dataTable, string bookingDate) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bookingDate == null)) {
+                throw new global::System.ArgumentNullException("bookingDate");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bookingDate));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsBox360.BookingDataTable GetDataBy(string bookingDate) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((bookingDate == null)) {
+                throw new global::System.ArgumentNullException("bookingDate");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(bookingDate));
+            }
             dsBox360.BookingDataTable dataTable = new dsBox360.BookingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6826,6 +6880,71 @@ SELECT BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue FROM Booki
         public virtual int Update(string ClientID, string ClassID, System.DateTime BookingDate, string Status, string Type, string Venue, string Original_BookingID, string Original_ClientID, string Original_ClassID, System.DateTime Original_BookingDate, string Original_Status, string Original_Type, string Original_Venue) {
             return this.Update(Original_BookingID, ClientID, ClassID, BookingDate, Status, Type, Venue, Original_BookingID, Original_ClientID, Original_ClassID, Original_BookingDate, Original_Status, Original_Type, Original_Venue);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertBooking(string BookingID, string ClientID, string ClassID, string BookingDate, string Status, string Type, string Venue) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((BookingID == null)) {
+                throw new global::System.ArgumentNullException("BookingID");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(BookingID));
+            }
+            if ((ClientID == null)) {
+                throw new global::System.ArgumentNullException("ClientID");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(ClientID));
+            }
+            if ((ClassID == null)) {
+                throw new global::System.ArgumentNullException("ClassID");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(ClassID));
+            }
+            if ((BookingDate == null)) {
+                throw new global::System.ArgumentNullException("BookingDate");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(BookingDate));
+            }
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Status));
+            }
+            if ((Type == null)) {
+                throw new global::System.ArgumentNullException("Type");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Type));
+            }
+            if ((Venue == null)) {
+                throw new global::System.ArgumentNullException("Venue");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(Venue));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -7036,36 +7155,40 @@ SELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, MaxCapacity, 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@classtype", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClassType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE Class\r\nSET          ClassType = @ClassType\r\nWHERE  (ClassID = @Original_Cl" +
-                "assID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, Max" +
-                "Capacity, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID = @ClassID)";
+            this._commandCollection[2].CommandText = @"UPDATE       Class
+SET                ClassType = @ClassType
+WHERE        (ClassID = @Original_ClassID);  
+SELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, MaxCapacity, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID = @ClassID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassType", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ClassType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE Class\r\nSET          EndTime = @EndTime\r\nWHERE  (ClassID = @Original_ClassI" +
-                "D); \r\nSELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, MaxCapa" +
-                "city, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID = @ClassID)";
+            this._commandCollection[3].CommandText = "UPDATE       Class\r\nSET                EndTime = @EndTime\r\nWHERE        (ClassID " +
+                "= @Original_ClassID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, StartTime" +
+                ", EndTime, MaxCapacity, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID =" +
+                " @ClassID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndTime", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "EndTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE Class\r\nSET          GroupType = @GroupType\r\nWHERE  (ClassID = @Original_Cl" +
-                "assID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, Max" +
-                "Capacity, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID = @ClassID)";
+            this._commandCollection[4].CommandText = "UPDATE       Class\r\nSET                GroupType = @GroupType\r\nWHERE        (Clas" +
+                "sID = @Original_ClassID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, Start" +
+                "Time, EndTime, MaxCapacity, CurrentCapacity, ClassPublic FROM Class WHERE (Class" +
+                "ID = @ClassID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupType", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "GroupType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE Class\r\nSET          StartTime = @StartTime\r\nWHERE  (ClassID = @Original_Cl" +
-                "assID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, StartTime, EndTime, Max" +
-                "Capacity, CurrentCapacity, ClassPublic FROM Class WHERE (ClassID = @ClassID)";
+            this._commandCollection[5].CommandText = "UPDATE       Class\r\nSET                StartTime = @StartTime\r\nWHERE        (Clas" +
+                "sID = @Original_ClassID); \r\nSELECT ClassID, CoachID, GroupType, ClassType, Start" +
+                "Time, EndTime, MaxCapacity, CurrentCapacity, ClassPublic FROM Class WHERE (Class" +
+                "ID = @ClassID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartTime", global::System.Data.SqlDbType.Time, 5, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClassID", global::System.Data.SqlDbType.VarChar, 7, global::System.Data.ParameterDirection.Input, 0, 0, "ClassID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7746,12 +7869,19 @@ SELECT ClientID, FirstName, LastName, ContactNumber, EmailAddress, MembershipPla
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ClientID, FirstName, LastName, ContactNumber, EmailAddress, MembershipPlan" +
                 ", AmountDue, Age, Gender, Password FROM dbo.Client";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        ClientID, FirstName, LastName, ContactNumber, EmailAddress, Members" +
+                "hipPlan, AmountDue, Age, Gender, Password\r\nFROM            Client\r\nWHERE        " +
+                "(LastName LIKE @lastname + \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastname", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7773,6 +7903,42 @@ SELECT ClientID, FirstName, LastName, ContactNumber, EmailAddress, MembershipPla
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsBox360.ClientDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsBox360.ClientDataTable dataTable = new dsBox360.ClientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLastName(dsBox360.ClientDataTable dataTable, string lastname) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((lastname == null)) {
+                throw new global::System.ArgumentNullException("lastname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(lastname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsBox360.ClientDataTable GetDataBy(string lastname) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((lastname == null)) {
+                throw new global::System.ArgumentNullException("lastname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(lastname));
+            }
             dsBox360.ClientDataTable dataTable = new dsBox360.ClientDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11744,15 +11910,6 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._classTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._classTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._clientTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -11825,6 +11982,15 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._classTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._classTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -11848,14 +12014,6 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._bookingTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._classTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._classTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11923,6 +12081,14 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._classTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._classTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -11933,6 +12099,14 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(dsBox360 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._classTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._classTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._supplierOrderTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.SupplierOrder.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11994,14 +12168,6 @@ SELECT SupplierOrderID, SupplierID, AssetID, TotalAmount, OrderDate, Quantity, S
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._clientTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._classTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Class.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._classTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
